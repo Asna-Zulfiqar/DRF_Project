@@ -10,8 +10,8 @@ class Post(models.Model):
     likes = models.ManyToManyField(CustomUser, related_name="liked_posts", blank=True)
     dislikes = models.ManyToManyField(CustomUser, related_name="disliked_posts", blank=True)
     country = models.ForeignKey('Country', on_delete=models.SET_NULL, null=True, blank=True)
-    views = models.PositiveIntegerField(default=0)  # Track views
-    impressions = models.PositiveIntegerField(default=0) # Track Impressions
+    views = models.PositiveIntegerField(default=0)  
+    impressions = models.PositiveIntegerField(default=0) 
 
     def __str__(self):
         return self.title
